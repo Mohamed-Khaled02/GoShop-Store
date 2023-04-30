@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Cart from "../pages/Cart";
 import Favorite from "../pages/Favorite";
 import Home from "../pages/Home";
+import Singup from "../pages/Singup";
 // import { productsData } from "../api/ApiData";
 
 const Layout = () => {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
       {
         path:"/favorite",
         element:<Favorite />
+      },
+      {
+        path:"/signup",
+        element:<Singup />
       }
     //   {
     //     path: "/product/:id",
