@@ -1,29 +1,38 @@
 import React from "react";
-import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Search from "./Search";
 
 const Header = () => {
   return (
-    <header className="bg-black text-white">
-      <nav className="flex items-center justify-between flex-wrap p-5">
+    <header className="bg-white text-black shadow-md border-b-[1px] border-gray-300">
+      <nav className="flex items-center gap-8 flex-wrap p-4 w-full">
         <div className="flex items-center mr-6">
-          <Link to="/" className="text-xl font-bold">
+          <Link to="/" className="text-2xl font-bold">
             GoShop
           </Link>
         </div>
-        <div className="flex items-center">
+        <div className="flex border rounded-xl overflow-hidden">
+            <Search />
+          </div>
+        <div className="flex items-center gap-5">
           <Link to="/" className="mr-4">
             Home
           </Link>
           <Link to="/cart" className="flex items-center mr-4">
-            Cart <FaShoppingCart className="ml-1" />
+            Cart{" "}
+            <span className="bg-red-500 text-white rounded-full px-2 ml-1">
+              5
+            </span>
           </Link>
           <Link to="/favorite" className="flex items-center mr-4">
-            Favorites <FaHeart className="ml-1" />
+            Favorites{" "}
+            <span className="bg-red-500 text-white rounded-full px-2 ml-1">
+              10
+            </span>
           </Link>
           <Link
             to="/signup"
-            className="px-4 py-2 border rounded-full hover:bg-white hover:text-black duration-300"
+            className="px-4 py-2 border rounded-full hover:bg-black hover:text-white duration-300"
           >
             Signup
           </Link>
