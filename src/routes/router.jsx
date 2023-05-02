@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Cart from "../pages/Cart";
 import Favorite from "../pages/Favorite";
 import Home from "../pages/Home";
+import Singin from "../pages/Singin";
 import Singup from "../pages/Singup";
 // import { productsData } from "../api/ApiData";
 
@@ -39,6 +40,10 @@ export const router = createBrowserRouter([
       {
         path:"/signup",
         element:<Singup />
+      },
+      {
+        path: "/signin",
+        element: <Singin />
       }
     //   {
     //     path: "/product/:id",

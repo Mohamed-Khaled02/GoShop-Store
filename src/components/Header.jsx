@@ -31,10 +31,10 @@ const Header = () => {
             </span>
           </Link>
           <Link
-            to="/signup"
+            to="/signin"
             className="px-4 py-2 border rounded-full hover:bg-black hover:text-white duration-300"
           >
-            Signup
+            Sign In
           </Link>
         </div>
       </nav>
