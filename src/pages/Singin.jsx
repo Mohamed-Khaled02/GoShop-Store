@@ -7,9 +7,8 @@ function Singin() {
   const [password, setPassword] = useState("");
 
   const handelSubmit = (e) => {
-    e.preventDefault()
-
-  }
+    e.preventDefault();
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -65,7 +64,10 @@ function Singin() {
         </form>
         <p className="text-gray-500 text-center">
           You Don't have an account?
-          <Link to="/signup" className="font-medium text-gray-600 hover:text-gray-500">
+          <Link
+            to="/signup"
+            className="font-medium text-gray-600 hover:text-gray-500"
+          >
             Sign Up
           </Link>
         </p>

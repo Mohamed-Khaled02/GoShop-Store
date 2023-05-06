@@ -15,8 +15,8 @@ const Header = () => {
           </Link>
         </div>
         <div className="flex border rounded-xl overflow-hidden">
-            <Search />
-          </div>
+          <Search />
+        </div>
         <div className="flex items-center gap-5">
           <Link to="/" className="mr-4">
             Home

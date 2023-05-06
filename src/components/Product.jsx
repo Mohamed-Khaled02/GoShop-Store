@@ -67,7 +67,7 @@ const Product = () => {
                 title: title,
                 image: image,
                 price: price,
-                category: category, 
+                category: category,
                 quantity: 1,
               })
             ) & toast.success(`${title} Added To Card`)

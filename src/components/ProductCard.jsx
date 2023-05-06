@@ -30,13 +30,14 @@ const ProductCard = ({ item }) => {
       </div>
       {/* Body */}
       <div className="p-4">
-        <h3 className="text-gray-900 font-bold text-lg mb-2">{title.slice(0,5)}</h3>
+        <h3 className="text-gray-900 font-bold text-lg mb-2">
+          {title.slice(0, 5)}
+        </h3>
         <div className="flex flex-wrap justify-between items-center">
           <span className="text-gray-700 font-medium">
             {category.toUpperCase()}
           </span>
           <div className="text-gray-700 ">
-
             <span className="font-bold">${price}</span>
           </div>
         </div>

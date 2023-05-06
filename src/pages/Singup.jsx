@@ -8,9 +8,8 @@ function Signup() {
   const [password, setPassword] = useState("");
 
   const handelSubmit = (e) => {
-    e.preventDefault()
-
-  }
+    e.preventDefault();
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -80,7 +79,10 @@ function Signup() {
         </form>
         <p className="text-gray-500 text-center">
           Already have an account?
-          <Link to="/signin" className="font-medium text-gray-600 hover:text-gray-500">
+          <Link
+            to="/signin"
+            className="font-medium text-gray-600 hover:text-gray-500"
+          >
             Sign in
           </Link>
         </p>
