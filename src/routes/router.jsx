@@ -1,12 +1,15 @@
 import { Outlet, createBrowserRouter, ScrollRestoration } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Products from "../components/Products";
 import Cart from "../pages/Cart";
 import Favorite from "../pages/Favorite";
 import Home from "../pages/Home";
 import Singin from "../pages/Singin";
 import Singup from "../pages/Singup";
-// import { productsData } from "../api/ApiData";
+import {productsData} from "../api/apiData"
+import Product from "../components/Product";
+
 
 const Layout = () => {
   return (
@@ -27,7 +30,7 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        // loader: productsData,
+        loader: productsData,
       },
       {
         path: "/cart",
@@ -44,11 +47,11 @@ export const router = createBrowserRouter([
       {
         path: "/signin",
         element: <Singin />
-      }
-    //   {
-    //     path: "/product/:id",
-    //     element: <Product />,
-    //   },
+      },
+      {
+        path: "/product/:id",
+        element: <Product />,
+      },
     //   {
     //     path: "/login",
     //     element: <Login />,

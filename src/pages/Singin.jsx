@@ -6,6 +6,11 @@ function Singin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const handelSubmit = (e) => {
+    e.preventDefault()
+
+  }
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
@@ -14,7 +19,7 @@ function Singin() {
             Sign up to GoShop
           </h1>
         </div>
-        <form className="mt-8 space-y-6">
+        <form className="mt-8 space-y-6" onSubmit={handelSubmit}>
           <input type="hidden" name="remember" value="true" />
           <div className="rounded-md shadow-sm space-y-4">
             <div>

@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="flex flex-col items-center justify-center gap-10 md:flex-row md:justify-around max-w-screen-xl mx-auto">
         {/* Display flex column on mobile, flex row on larger screens */}
         <div className="flex flex-col gap-5">
-          <h1 className="text-3xl font-bold">Bazaar</h1>
+          <h1 className="text-3xl font-bold">GoShop</h1>
           <p>@GoShop</p>
           <div className="flex gap-4 text-xl text-gray-500">
             <AiFillGithub />

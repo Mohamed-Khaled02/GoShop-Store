@@ -7,6 +7,11 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const handelSubmit = (e) => {
+    e.preventDefault()
+
+  }
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
@@ -15,7 +20,7 @@ function Signup() {
             Sign up to GoShop
           </h1>
         </div>
-        <form className="mt-8 space-y-6">
+        <form className="mt-8 space-y-6" onSubmit={handelSubmit}>
           <input type="hidden" name="remember" value="true" />
           <div className="rounded-md shadow-sm space-y-4">
             <div>
@@ -23,8 +28,6 @@ function Signup() {
                 Name
               </label>
               <input
-                onFocus={() => setName("John Doe")}
-                onBlur={() => setName("")}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 id="name"
@@ -39,8 +42,6 @@ function Signup() {
                 Email address
               </label>
               <input
-                onFocus={() => setEmail("john@example.com")}
-                onBlur={() => setEmail("")}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 id="email"
@@ -55,8 +56,6 @@ function Signup() {
                 Password
               </label>
               <input
-                onFocus={() => setPassword("password1234")}
-                onBlur={() => setPassword("")}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 id="password"
