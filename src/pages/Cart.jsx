@@ -84,7 +84,7 @@ function Cart() {
               <button
                 className="mt-2 text-red-700 hover:text-red-900 focus:outline-none"
                 onClick={() =>
-                  dispatch(deleteFromCart(item._id)) &
+                  dispatch(deleteFromCart(item.id)) &
                   toast.error(`Item Deleted`)
                 }
               >
