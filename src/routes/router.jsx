@@ -13,6 +13,9 @@ import Singin from "../pages/Singin";
 import Singup from "../pages/Singup";
 import { productsData } from "../api/apiData";
 import Product from "../components/Product";
+import Clothes from "../components/Clothes";
+import Foods from "../components/Foods";
+import Electroincs from "../components/Electronics";
 
 const Layout = () => {
   return (
@@ -55,10 +58,21 @@ export const router = createBrowserRouter([
         path: "/product/:id",
         element: <Product />,
       },
-      //   {
-      //     path: "/login",
-      //     element: <Login />,
-      //   },
+      {
+        path: "/clothes",
+        element: <Clothes />,
+        loader: productsData,
+      },
+      {
+        path: "/food",
+        element: <Foods />,
+        loader: productsData,
+      },
+      {
+        path: "/electronics",
+        element: <Electroincs />,
+        loader: productsData,
+      },
     ],
   },
 ]);

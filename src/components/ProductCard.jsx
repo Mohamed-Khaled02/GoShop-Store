@@ -31,7 +31,7 @@ const ProductCard = ({ item }) => {
       {/* Body */}
       <div className="p-4">
         <h3 className="text-gray-900 font-bold text-lg mb-2">
-          {title.slice(0, 5)}
+          {title.slice(0, 20)}
         </h3>
         <div className="flex flex-wrap justify-between items-center">
           <span className="text-gray-700 font-medium">
@@ -56,7 +56,7 @@ const ProductCard = ({ item }) => {
             })
           ) & toast.success(`${title} Added To Card`)
         }
-        className="mb-5 w-full rounded-sm bg-black text-white py-2 transition duration-300 hover:bg-gray-400 focus:outline-none"
+        className="mb-5 w-full rounded-sm bg-black text-white py-2 transition duration-300 hover:bg-white hover:border-[1px] hover:border-black hover:text-black focus:outline-none"
       >
         Add to Cart
       </button>
