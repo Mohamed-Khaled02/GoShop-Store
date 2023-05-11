@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const items = useSelector((state) => state.goShop.productQuantity);
+  const favoriteItems = useSelector((state) => state.goShop.favoritesItems);
 
   return (
     <header className="bg-white text-black shadow-md border-b-[1px] border-gray-300 sticky top-0 z-50 ">
@@ -26,7 +27,7 @@ const Header = () => {
           <Link to="/favorite" className="flex items-center mr-4">
             Favorites{" "}
             <span className="bg-red-500 text-white rounded-full px-2 ml-1">
-              10
+              {favoriteItems.length}
             </span>
           </Link>
           <Link
