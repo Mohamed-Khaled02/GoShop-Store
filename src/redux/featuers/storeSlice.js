@@ -3,12 +3,14 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   productQuantity: [],
   userInfo: null,
+  favoritesItems: [],
 };
 
 export const ItemsSlice = createSlice({
   name: "item",
   initialState,
   reducers: {
+    // handle cart functions
     addToCart: (state, action) => {
       const itemId = action.payload.id;
       const item = state.productQuantity.find((item) => item.id === itemId);
@@ -47,6 +49,18 @@ export const ItemsSlice = createSlice({
     reseatCart: (state) => {
       state.productQuantity = [];
     },
+    // handel favorite toggle
+    toggleFavorite: (state, action) => {
+      const productIndex = state.favoritesItems.findIndex(
+        (p) => p.id === action.payload.id
+      );
+      if (productIndex >= 0) {
+        state.favoritesItems.splice(productIndex, 1);
+      } else {
+        state.favoritesItems.push(action.payload);
+      }
+    },
+
     // handel user auth
     addUser: (state, action) => {
       state.userInfo = action.payload;
@@ -65,5 +79,6 @@ export const {
   reseatCart,
   addUser,
   removeUser,
+  toggleFavorite,
 } = ItemsSlice.actions;
 export default ItemsSlice.reducer;

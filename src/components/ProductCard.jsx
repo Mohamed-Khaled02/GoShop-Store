@@ -1,21 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import { addToCart } from "../redux/featuers/storeSlice";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { addToCart, toggleFavorite } from "../redux/featuers/storeSlice";
 import "react-toastify/dist/ReactToastify.css";
 
 const ProductCard = ({ item }) => {
+  const [isFav, setIsFav] = useState(false);
+
   const dispatch = useDispatch();
 
   const { id, title, image, price, category } = item;
+
   const navigate = useNavigate();
+
   const handelProductDetails = () => {
     navigate(`/product/${id}`, {
       state: {
         item: item,
       },
     });
+  };
+
+  const handleIsFav = () => {
+    setIsFav((p) => !p);
+    dispatch(toggleFavorite({ id, title, price, image, category }));
   };
 
   return (
@@ -30,12 +40,15 @@ const ProductCard = ({ item }) => {
       </div>
       {/* Body */}
       <div className="p-4">
-        <h3 className="text-gray-900 font-bold text-lg mb-2">
-          {title.slice(0, 20)}
+        <h3 className="text-gray-900 font-bold text-lg mb-2 flex justify-between items-center ">
+          {title?.slice(0, 20)}
+          <button className="cursor-pointer" onClick={handleIsFav}>
+            {isFav ? <AiFillHeart size={30} /> : <AiOutlineHeart size={30} />}
+          </button>
         </h3>
         <div className="flex flex-wrap justify-between items-center">
           <span className="text-gray-700 font-medium">
-            {category.toUpperCase()}
+            {category?.toUpperCase()}
           </span>
           <div className="text-gray-700 ">
             <span className="font-bold">${price}</span>
